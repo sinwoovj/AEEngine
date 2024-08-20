@@ -1,0 +1,88 @@
+[
+  {
+    "Object": 0,
+    "components": [
+      null,
+      null,
+      {
+        "Type": "TransformComp",
+        "CompData": {
+          "Pos": [
+            0.0,
+            0.0
+          ],
+          "Sca": [
+            1600.0,
+            900.0
+          ],
+          "Rot": 0.0
+        }
+      }
+    ]
+  },
+  {
+    "Object": 1,
+    "components": [
+      null,
+      null,
+      {
+        "Type": "TransformComp",
+        "CompData": {
+          "Pos": [
+            0.0,
+            0.0
+          ],
+          "Sca": [
+            30.0,
+            30.0
+          ],
+          "Rot": 0.0
+        }
+      }
+    ]
+  },
+  {
+    "Object": 2,
+    "components": [
+      null,
+      null,
+      null,
+      {
+        "Type": "TransformComp",
+        "CompData": {
+          "Pos": [
+            -750.0,
+            19.167695999145508
+          ],
+          "Sca": [
+            20.0,
+            150.0
+          ],
+          "Rot": 0.0
+        }
+      }
+    ]
+  },
+  {
+    "Object": 3,
+    "components": [
+      null,
+      null,
+      null,
+      {
+        "Type": "TransformComp",
+        "CompData": {
+          "Pos": [
+            750.0,
+            -15.0
+          ],
+          "Sca": [
+            20.0,
+            150.0
+          ],
+          "Rot": 0.0
+        }
+      }
+    ]
+  }
+]
