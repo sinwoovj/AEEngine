@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e059eda1-9435-46d3-aca7-ac6be185e6a6}</ProjectGuid>
+    <RootNamespace>AEXEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)Extern\AlphaEngine\include;$(SolutionDir)AEX_Engine\Serializer;$(SolutionDir)AEX_Engine\GSM;$(SolutionDir)AEX_Engine\EM;$(SolutionDir)AEX_Engine\RTTI;$(SolutionDir)AEX_Engine\RM;$(SolutionDir)AEX_Engine\GO;$(SolutionDir)AEX_Engine\Components\Collision;$(SolutionDir)AEX_Engine\Components\Test;$(SolutionDir)AEX_Engine\Components;$(SolutionDir)Extern\Json;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Extern\AlphaEngine\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir).tmp\$(Configuration)-$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)Extern\AlphaEngine\include;$(SolutionDir)AEX_Engine\Serializer;$(SolutionDir)AEX_Engine\GSM;$(SolutionDir)AEX_Engine\EM;$(SolutionDir)AEX_Engine\RTTI;$(SolutionDir)AEX_Engine\RM;$(SolutionDir)AEX_Engine\GO;$(SolutionDir)AEX_Engine\Components\Collision;$(SolutionDir)AEX_Engine\Components\Test;$(SolutionDir)AEX_Engine\Components;$(SolutionDir)Extern\Json;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Extern\AlphaEngine\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir).tmp\$(Configuration)-$(Platform)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Alpha_EngineD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)Assets\*" "$(OutDir)Assets\" /s /r /y /q
+xcopy "$(SolutionDir)Extern\AlphaEngine\lib\freetype.dll" "$(OutDir)" /s /r /y /q
+xcopy "$(SolutionDir)Extern\AlphaEngine\lib\Alpha_EngineD.dll" "$(OutDir)" /s /r /y /q
+xcopy "$(SolutionDir)Extern\AlphaEngine\lib\fmodL.dll" "$(OutDir)" /s /r /y /q</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Alpha_Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)Assets\*" "$(OutDir)Assets\" /s /r /y /q
+xcopy "$(SolutionDir)Extern\AlphaEngine\lib\freetype.dll" "$(OutDir)" /s /r /y /q
+xcopy "$(SolutionDir)Extern\AlphaEngine\lib\Alpha_Engine.dll" "$(OutDir)" /s /r /y /q
+xcopy "$(SolutionDir)Extern\AlphaEngine\lib\fmod.dll" "$(OutDir)" /s /r /y /q</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="AEX_Engine\Components\ComponentManager.inl" />
+    <None Include="AEX_Engine\Components\readme.md" />
+    <None Include="AEX_Engine\cpp.hint" />
+    <None Include="AEX_Engine\GO\GameObject.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AEX_Engine\Components\AudioComponent.cpp" />
+    <ClCompile Include="AEX_Engine\Components\Collision\Calculate.cpp" />
+    <ClCompile Include="AEX_Engine\Components\Collision\OnTrigger.cpp" />
+    <ClCompile Include="AEX_Engine\Components\Collision\Standard.cpp" />
+    <ClCompile Include="AEX_Engine\Components\EngineComponent.cpp" />
+    <ClCompile Include="AEX_Engine\Components\GraphicsComponent.cpp" />
+    <ClCompile Include="AEX_Engine\Components\LogicComponent.cpp" />
+    <ClCompile Include="AEX_Engine\Components\PlayerComp.cpp" />
+    <ClCompile Include="AEX_Engine\Components\PlayerComp2.cpp" />
+    <ClCompile Include="AEX_Engine\Components\Rigidbody.cpp" />
+    <ClCompile Include="AEX_Engine\Components\SpriteComponent.cpp" />
+    <ClCompile Include="AEX_Engine\Components\Test\TestComponent.cpp" />
+    <ClCompile Include="AEX_Engine\Components\Test\TestFunc.cpp" />
+    <ClCompile Include="AEX_Engine\Components\TransformComp.cpp" />
+    <ClCompile Include="AEX_Engine\EM\EventManager.cpp" />
+    <ClCompile Include="AEX_Engine\GO\GameObject.cpp" />
+    <ClCompile Include="AEX_Engine\GO\GameObjectManager.cpp" />
+    <ClCompile Include="AEX_Engine\GSM\GameStateManager.cpp" />
+    <ClCompile Include="AEX_Engine\GSM\GoalLevel.cpp" />
+    <ClCompile Include="AEX_Engine\GSM\Main.cpp" />
+    <ClCompile Include="AEX_Engine\GSM\MainMenu.cpp" />
+    <ClCompile Include="AEX_Engine\RM\AudioResourceComp.cpp" />
+    <ClCompile Include="AEX_Engine\RM\ResourceManager.cpp" />
+    <ClCompile Include="AEX_Engine\RM\TextureResourceComp.cpp" />
+    <ClCompile Include="AEX_Engine\RTTI\Registry.cpp" />
+    <ClCompile Include="AEX_Engine\Serializer\Serializer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AEX_Engine\Components\AudioComponent.h" />
+    <ClInclude Include="AEX_Engine\Components\BaseComponent.h" />
+    <ClInclude Include="AEX_Engine\Components\CoinComp.h" />
+    <ClInclude Include="AEX_Engine\Components\Collision\Calculate.h" />
+    <ClInclude Include="AEX_Engine\Components\Collision\Collision.h" />
+    <ClInclude Include="AEX_Engine\Components\Collision\OnTrigger.h" />
+    <ClInclude Include="AEX_Engine\Components\Collision\Shape.h" />
+    <ClInclude Include="AEX_Engine\Components\Collision\Standard.h" />
+    <ClInclude Include="AEX_Engine\Components\EngineComponent.h" />
+    <ClInclude Include="AEX_Engine\Components\GraphicsComponent.h" />
+    <ClInclude Include="AEX_Engine\Components\GraphicsManager.h" />
+    <ClInclude Include="AEX_Engine\Components\LogicComponent.h" />
+    <ClInclude Include="AEX_Engine\Components\LogicManager.h" />
+    <ClInclude Include="AEX_Engine\Components\ComponentManager.h" />
+    <ClInclude Include="AEX_Engine\Components\ManagerTemplate.h" />
+    <ClInclude Include="AEX_Engine\Components\PlayerComp.h" />
+    <ClInclude Include="AEX_Engine\Components\PlayerComp2.h" />
+    <ClInclude Include="AEX_Engine\Components\Rigidbody.h" />
+    <ClInclude Include="AEX_Engine\Components\SpriteComponent.h" />
+    <ClInclude Include="AEX_Engine\Components\Test\TestComponent.h" />
+    <ClInclude Include="AEX_Engine\Components\Test\TestFunc.h" />
+    <ClInclude Include="AEX_Engine\Components\TransformComp.h" />
+    <ClInclude Include="AEX_Engine\EM\EventManager.h" />
+    <ClInclude Include="AEX_Engine\GO\GameObject.h" />
+    <ClInclude Include="AEX_Engine\GO\GameObjectManager.h" />
+    <ClInclude Include="AEX_Engine\GSM\BaseLevel.hpp" />
+    <ClInclude Include="AEX_Engine\GSM\GameStateManager.hpp" />
+    <ClInclude Include="AEX_Engine\GSM\GoalLevel.hpp" />
+    <ClInclude Include="AEX_Engine\GSM\MainMenu.hpp" />
+    <ClInclude Include="AEX_Engine\RM\AudioResourceComp.h" />
+    <ClInclude Include="AEX_Engine\RM\Resource.h" />
+    <ClInclude Include="AEX_Engine\RM\ResourceManager.h" />
+    <ClInclude Include="AEX_Engine\RM\TextureResourceComp.h" />
+    <ClInclude Include="AEX_Engine\RTTI\BaseRTTI.h" />
+    <ClInclude Include="AEX_Engine\RTTI\Registry.h" />
+    <ClInclude Include="AEX_Engine\Serializer\Serializer.h" />
+    <ClInclude Include="Extern\Json\json.hpp" />
+    <ClInclude Include="Extern\Json\json_fwd.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
