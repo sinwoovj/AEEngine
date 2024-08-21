@@ -7,9 +7,6 @@
 
 PlayerComp2::PlayerComp2(GameObject* owner) : LogicComponent(owner)
 {
-	moveSpeed = 50;
-	rotateSpeed = 0.2f;
-	
 	topLimit = 375;
 	bottomLimit = -375;
 	ComponentManager<PlayerComp2>::GetManager()->AddComponent(this);
@@ -31,12 +28,16 @@ void PlayerComp2::Update()
 	}
 	else if (t->GetPos().y < bottomLimit)
 	{
+		r->ClearVelocity();
 		t->SetPos({ t->GetPos().x, bottomLimit });
 	}
 	else
 	{
 		s32 x, y;
 		AEInputGetCursorPosition(&x, &y);
-		t->SetPos({ t->GetPos().x,-(float)y + 440 });
+		if (-y + 440 < topLimit && -y + 440 > bottomLimit)
+		{
+			t->SetPos({ t->GetPos().x,-(float)y + 440 });
+		}
 	}
 }

@@ -5,7 +5,8 @@
 
 class RigidBody : public EngineComponent
 {
-	float drag = 1.1f;
+	//저항 값으로, 1보다 작으면 속도는 점점 증가하고 1보다 크면 속도는 점점 감소한다. 1일 시에는 등속운동을 한다.
+	float drag = 1; 
 
 	AEVec2 Velocity;
 	AEVec2 MaxVelocity;

@@ -12,7 +12,8 @@
 #include "GameObjectManager.h"
 #include <iostream>
 #include <string>
-#include <PlayerComp2.h>
+#include "PlayerComp2.h"
+#include "BallComp.h"
 
 /*
 resource origin
@@ -29,7 +30,7 @@ void Levels::MainLevel::Init()
 	background->AddComponent<AudioComponent>();
 	background->FindComponent<AudioComponent>()->
 		SetAudio(ResourceManager::GetResourceManager()->
-			Get<AudioResourceComp>("Extern/Assets/pong.mp3")->data);
+ 			Get<AudioResourceComp>("Extern/Assets/pong.mp3")->data);
 	background->FindComponent<AudioComponent>()->volume = 1.f;
 	background->AddComponent<SpriteComponent>();
 	background->FindComponent<SpriteComponent>()->
@@ -46,7 +47,9 @@ void Levels::MainLevel::Init()
 	ball->AddComponent<TransformComp>();
 	ball->FindComponent<TransformComp>()->SetScale({ 30,30 });
 	ball->AddComponent<RigidBody>();
-
+	ball->AddComponent<BallComp>();
+	ball->FindComponent<BallComp>()->Reset();
+	
 	player1 = new GameObject;
 	player1->AddComponent<SpriteComponent>();
 	player1->FindComponent<SpriteComponent>()->
@@ -69,8 +72,6 @@ void Levels::MainLevel::Init()
 	player2->AddComponent<PlayerComp2>();
 	player2->AddComponent<RigidBody>();
 
-	
-
 	Serializer* s = Serializer::get_serializer_ptr();
 
 	//s->LoadLevel("Test2.json");
@@ -81,11 +82,8 @@ void Levels::MainLevel::Init()
 void Levels::MainLevel::Update()
 {
 	//std::cout << "Main level Update:" << std::endl;
-
-	AEGfxSetBackgroundColor(0.0f, 0.0f, 0.0f);
 	
-	//TransformComp* ball_trs = ball->FindComponent<TransformComp>();
-	//ball_trs->SetRot({ ball_trs->GetRot() + 0.4f });
+	AEGfxSetBackgroundColor(0.0f, 0.0f, 0.0f);
 }
 
 void Levels::MainLevel::Exit()
@@ -93,10 +91,4 @@ void Levels::MainLevel::Exit()
 	Serializer* s = Serializer::get_serializer_ptr();
 	s->SaveLevel("Test2.json");
 	s->clear();
-	//delete ball;
-	//delete finishLine1;
-	//delete finishLine2;
-	//delete player1;
-	//delete player2;
-	//delete points;
 }

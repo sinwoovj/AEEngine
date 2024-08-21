@@ -87,9 +87,6 @@
     <ClCompile Include="AEX_Engine\Components\Collision\OnTrigger.cpp">
       <Filter>헤더 파일</Filter>
     </ClCompile>
-    <ClCompile Include="AEX_Engine\Components\Collision\Standard.cpp">
-      <Filter>헤더 파일</Filter>
-    </ClCompile>
     <ClCompile Include="AEX_Engine\GO\GameObjectManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -97,6 +94,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="AEX_Engine\Components\PlayerComp2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AEX_Engine\Components\BallComp.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -149,7 +149,7 @@
     <ClInclude Include="AEX_Engine\Components\BaseComponent.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="AEX_Engine\Components\CoinComp.h">
+    <ClInclude Include="AEX_Engine\Components\BallComp.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="AEX_Engine\Components\EngineComponent.h">
@@ -201,9 +201,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="AEX_Engine\Components\Collision\Shape.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="AEX_Engine\Components\Collision\Standard.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Extern\Json\json.hpp">

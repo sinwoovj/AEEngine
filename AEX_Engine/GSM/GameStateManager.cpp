@@ -57,12 +57,11 @@ void GSM::GameStateManager::Update()
 {
     if (currentLevel)
     {
-        ComponentManager<TestComponent>::GetManager()->Update();
         ComponentManager<AudioComponent>::GetManager()->Update();
         ComponentManager<SpriteComponent>::GetManager()->Update();
-        ComponentManager<PlayerComp>::GetManager()->Update();
-        ComponentManager<PlayerComp2>::GetManager()->Update();
-        ComponentManager<RigidBody>::GetManager()->Update();
+        ComponentManager<LogicComponent>::GetManager()->Update();
+        ComponentManager<EngineComponent>::GetManager()->Update();
+
         currentLevel->Update();
     }
 }
@@ -71,7 +70,8 @@ void GSM::GameStateManager::Exit()
 {
     if (currentLevel)
     {
-        ComponentManager<TestComponent>::clear();
+        ComponentManager<TestComponent>::clear
+        ();
 
         currentLevel->Exit();
 

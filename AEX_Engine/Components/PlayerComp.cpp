@@ -8,7 +8,6 @@
 PlayerComp::PlayerComp(GameObject* owner) : LogicComponent(owner)
 {
 	moveSpeed = 50;
-	rotateSpeed = 0.2f;
 	
 	topLimit = 375;
 	bottomLimit = -375;

@@ -7,6 +7,8 @@ public:
 	EngineComponent(GameObject* owner);
 	~EngineComponent();
 
+
+	virtual void Update() = 0;
 	virtual json SaveToJson() = 0;
 	virtual void LoadFromJson(const json&) = 0;
 };

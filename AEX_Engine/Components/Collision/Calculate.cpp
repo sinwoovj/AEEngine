@@ -2,22 +2,22 @@
 
 #include <cmath>
 
-bool isWithinBoundary(Vector2D v1, Vector2D v2, Size2D size)
+bool isWithinBoundary(AEVec2 v1, AEVec2 v2, Size2D size)
 // v1이 base, v2가 target
 {
     return (v1.x >= v2.x && v1.x <= v2.x + size.w) && 
         (v1.y >= v2.y && v1.y <= v2.y + size.h);
 }
 
-bool RangeTest(Vector2D v1, float v1_size, ShapeType v1_shape,
-    Vector2D v2, float v2_size, ShapeType v2_shape, Size2D rect_size)
+bool RangeTest(AEVec2 v1, float v1_size, ShapeType v1_shape,
+	AEVec2 v2, float v2_size, ShapeType v2_shape, Size2D rect_size)
     // v1이 base, v2가 target
 {
 	bool res = false;
 
 	if (v1_shape == Square && v2_shape == Square)
 	{
-		Vector2D coord[4];
+		AEVec2 coord[4];
 
 		coord[0] = v2;
 

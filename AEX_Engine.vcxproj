@@ -107,9 +107,9 @@ xcopy "$(SolutionDir)Extern\AlphaEngine\lib\fmod.dll" "$(OutDir)" /s /r /y /q</C
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AEX_Engine\Components\AudioComponent.cpp" />
+    <ClCompile Include="AEX_Engine\Components\BallComp.cpp" />
     <ClCompile Include="AEX_Engine\Components\Collision\Calculate.cpp" />
     <ClCompile Include="AEX_Engine\Components\Collision\OnTrigger.cpp" />
-    <ClCompile Include="AEX_Engine\Components\Collision\Standard.cpp" />
     <ClCompile Include="AEX_Engine\Components\EngineComponent.cpp" />
     <ClCompile Include="AEX_Engine\Components\GraphicsComponent.cpp" />
     <ClCompile Include="AEX_Engine\Components\LogicComponent.cpp" />
@@ -136,12 +136,11 @@ xcopy "$(SolutionDir)Extern\AlphaEngine\lib\fmod.dll" "$(OutDir)" /s /r /y /q</C
   <ItemGroup>
     <ClInclude Include="AEX_Engine\Components\AudioComponent.h" />
     <ClInclude Include="AEX_Engine\Components\BaseComponent.h" />
-    <ClInclude Include="AEX_Engine\Components\CoinComp.h" />
+    <ClInclude Include="AEX_Engine\Components\BallComp.h" />
     <ClInclude Include="AEX_Engine\Components\Collision\Calculate.h" />
     <ClInclude Include="AEX_Engine\Components\Collision\Collision.h" />
     <ClInclude Include="AEX_Engine\Components\Collision\OnTrigger.h" />
     <ClInclude Include="AEX_Engine\Components\Collision\Shape.h" />
-    <ClInclude Include="AEX_Engine\Components\Collision\Standard.h" />
     <ClInclude Include="AEX_Engine\Components\EngineComponent.h" />
     <ClInclude Include="AEX_Engine\Components\GraphicsComponent.h" />
     <ClInclude Include="AEX_Engine\Components\GraphicsManager.h" />

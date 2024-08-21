@@ -1,11 +1,9 @@
 #pragma once
-
 #include "LogicComponent.h"
 
 class PlayerComp : public LogicComponent
 {
 	float moveSpeed;
-	float rotateSpeed;
 
 	float topLimit;
 	float bottomLimit;

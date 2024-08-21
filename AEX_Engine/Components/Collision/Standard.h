@@ -3,7 +3,6 @@
 typedef enum ShapeType {
 	Square,
 	Rect,
-	Polygon,
 	Circle
 }ShapeType;
 

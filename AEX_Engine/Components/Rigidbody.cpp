@@ -18,12 +18,11 @@ RigidBody::RigidBody(GameObject* owner) : EngineComponent(owner), Velocity(), Ma
 	Velocity.y = 0;
 	MaxVelocity.x = 100;
 	MaxVelocity.y = 100;
-	ComponentManager<RigidBody>::GetManager()->AddComponent(this);
+
 }
 
 RigidBody::~RigidBody()
 {
-	ComponentManager<RigidBody>::GetManager()->RemoveComponent(this);
 }
 
 void RigidBody::AddVelocity(float x, float y)
