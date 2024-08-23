@@ -36,6 +36,38 @@ bool RangeTest(AEVec2 v1, float v1_size, ShapeType v1_shape,
 				res = true;
 		}
 	}
+	else if (v1_shape == Square && v2_shape == Rect)
+	{
+		/*
+		(AEVec2 v1, float v1_size, ShapeType v1_shape,
+		AEVec2 v2, float v2_size, ShapeType v2_shape, Size2D rect_size)
+		*/
+		enum dir {
+			right = 0,
+			left = 1,
+			bottom = 2,
+			top = 3
+		};
+		float square[4];
+		square[left] =		v1.x - v1_size / 2;
+		square[right] =		v1.x + v1_size / 2;
+		square[top] =		v1.y - v1_size / 2;
+		square[bottom] =	v1.y + v1_size / 2;
+		float rect[4];
+		rect[left] =		v2.x - rect_size.w / 2;
+		rect[right] =		v2.x + rect_size.w / 2;
+		rect[top] =			v2.y - rect_size.h / 2;
+		rect[bottom] =		v2.y + rect_size.h / 2;
+
+		// 충돌하지 않는 조건을 모두 확인
+		if (rect[right] < square[left] ||   // rect가 square의 왼쪽에 있음
+			rect[left] > square[right] ||   // rect가 square의 오른쪽에 있음
+			rect[bottom] < square[top] ||   // rect가 square의 위쪽에 있음
+			rect[top] > square[bottom]) {   // rect가 square의 아래쪽에 있음
+			return false; // 충돌 없음
+		}
+		return true; // 충돌 있음
+	}
 	else if (v1_shape == Square && v2_shape == Circle)
 	{
 		// 사각형의 가장 가까운 점 찾기

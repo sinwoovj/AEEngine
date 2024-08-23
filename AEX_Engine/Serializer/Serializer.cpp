@@ -87,14 +87,14 @@ void Serializer::SaveLevel(const std::string& filename)
 	int i = 0;
 
 	//iterate on each go
-	for (GameObject* go : GameObjectManager::GetGOMPtr()->AllObj())
+	for (const auto& go : GameObjectManager::GetGOMPtr()->AllObj())
 	{
 		json obj;
 		obj["Object"] = i++;
 
 		json components;
 		//iterate on each component
-		for (auto& c : go->GetComponents())
+		for (auto& c : go.first->GetComponents())
 		{
 			BaseComponent* comp = c.second;
 			components.push_back(comp->SaveToJson());	//Check in a moment

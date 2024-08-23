@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include <vector>
 #include <algorithm>
+#include <map>
 
 class GameObjectManager
 {
@@ -12,19 +13,19 @@ private:
 	//Remove the compiler defined Copy Constructor and Asignment operator
 	GameObjectManager(const GameObjectManager& other) = delete;
 	const GameObjectManager& operator= (const GameObjectManager& other) = delete;
-	std::vector<GameObject*> my_Obj;
+	std::map<GameObject*,std::string> my_Obj;
 	static GameObjectManager* my_gameObject_ptr;
 
 
 public:
 	int counter; 
 
-	std::vector<GameObject*> AllObj();
+	std::map<GameObject*, std::string> AllObj();
 	GameObject* AddObj();
-	void InsertObj(GameObject* target);
+	void InsertObj(GameObject* target, std::string str);
 	void RemoveObj(GameObject* target);
 	void ClearObj();
-	GameObject* GetObj(GameObject* target);
+	GameObject* GetObj(const std::string& id);
 	GameObject* GetLastObj();
 	static GameObjectManager* GetGOMPtr();
 	static void clear();

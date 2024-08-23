@@ -16,8 +16,8 @@ RigidBody::RigidBody(GameObject* owner) : EngineComponent(owner), Velocity(), Ma
 {
 	Velocity.x = 0;
 	Velocity.y = 0;
-	MaxVelocity.x = 100;
-	MaxVelocity.y = 100;
+	MaxVelocity.x = 10000;
+	MaxVelocity.y = 10000;
 
 }
 
@@ -48,8 +48,8 @@ void RigidBody::Update()
 	float x = t->GetPos().x + Velocity.x * AEFrameRateControllerGetFrameTime(); // + 1.0f / 2 * acc * time *time
 	float y = t->GetPos().y + Velocity.y * AEFrameRateControllerGetFrameTime(); // + 1.0f / 2 * acc * time *time
 	
-	Velocity.x /= drag;
-	Velocity.y /= drag;
+	//Velocity.x /= drag;
+	//Velocity.y /= drag;
 
 	//If im too low, just set to 0
 	if (CheckEpsilon(Velocity.x) == false)
@@ -63,4 +63,9 @@ void RigidBody::Update()
 AEVec2 RigidBody::GetVelocity()
 {
 	return Velocity;
+}
+
+void RigidBody::SetVelocity(AEVec2 vec)
+{
+	Velocity = vec;
 }

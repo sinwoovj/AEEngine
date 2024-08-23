@@ -25,6 +25,7 @@ public:
 	void Update() override;
 
 	AEVec2 GetVelocity();
+	void SetVelocity(AEVec2 vec);
 
 	void LoadFromJson(const json& data) override {};
 	json SaveToJson() override { return json{}; };

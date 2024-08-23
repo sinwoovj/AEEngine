@@ -22,7 +22,7 @@ class GameObject
 	std::map<std::string ,BaseComponent*> components;
 public:
 	//Default constructor
-	GameObject();
+	GameObject(std::string str);
 	//Copy constructor
 	GameObject(const GameObject& other);
 	//Asignment operator

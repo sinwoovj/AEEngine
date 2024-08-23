@@ -7,7 +7,7 @@
 
 PlayerComp::PlayerComp(GameObject* owner) : LogicComponent(owner)
 {
-	moveSpeed = 50;
+	moveSpeed = 30;
 	
 	topLimit = 375;
 	bottomLimit = -375;

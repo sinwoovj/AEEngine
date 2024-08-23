@@ -1,8 +1,10 @@
 #pragma once
 #include "BaseLevel.hpp"
 #include "GameObject.h"
+#define MAXSCORE 11
 
 class GameObject;
+
 
 namespace Levels
 {
@@ -20,8 +22,17 @@ namespace Levels
 		GameObject* ball;
 		int counter;
 
+		// functions
 		void Init() override;
 		void Update() override;
 		void Exit() override;
+
+	public:
+		// variables
+		static float player1score;
+		static float player2score;
+		static int isScore;
+		static int isEnd;
+		static bool scoreTrigger;
 	};
 }

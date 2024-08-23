@@ -2,10 +2,10 @@
 #include "BaseComponent.h"
 #include "GameObjectManager.h"
 
-GameObject::GameObject()
+GameObject::GameObject(std::string str)
 {
 	GameObjectManager::GetGOMPtr()->counter++;
-	GameObjectManager::GetGOMPtr()->InsertObj(this);
+	GameObjectManager::GetGOMPtr()->InsertObj(this, str);
 }
 
 GameObject::GameObject(const GameObject& other)
